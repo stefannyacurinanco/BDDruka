@@ -9,16 +9,20 @@ import lombok.Setter;
 
 import java.sql.Time;
 import java.util.Date;
+import java.util.List;
+
 @Entity
-@Table
+@Table(name="reservas")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class ReservaEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ReservaId;
+
     private Integer NumeroPersonas;
     private String Comentario;
     private String Salón;  //Hacer entidad
@@ -40,6 +44,7 @@ public class ReservaEntity {
             joinColumns = @JoinColumn(name = "reserva_id"),
             inverseJoinColumns = @JoinColumn(name = "salon_id")
     )
+    private List<SalonEntity> salonesReserva;
 
 
 }
