@@ -17,9 +17,9 @@ public class UsuarioController {
     @Autowired
     private UsuarioServiceImpl usuarioService;
 
-    @GetMapping("telefono/{a}")
-    private Long telefono(@PathVariable("a") Integer telefono) {
-        return "El año es: " + telefono;
+    @GetMapping("telefono/{usuario}")
+    private String telefono(@PathVariable("usuario") Integer telefono) {
+        return "El telefono es: " + telefono;
     }
 
     @GetMapping("ususario/{id}")
@@ -35,5 +35,27 @@ public class UsuarioController {
         //System.out.println("hola");
         return usuarioService.obtenerUsuarios();
     }
+
+
+    @PostMapping("nuevo")
+    public  ResponseEntity<UsuarioEntity> guardarNuevoUsuario(@RequestBody UsuarioEntity usuarioEntity) {
+        //System.out.println(personajeEntity.getPersonajeName());
+        //PersonajeEntity nuevoPersonaje = personajeService.save(personajeEntity);
+        return ResponseEntity.ok(usuarioService.guardarUsuario(usuarioEntity));
+    }
+
+    @DeleteMapping("borrar/{id}")
+    public void borrarUsuariojePorId(@PathVariable("id")Long id) {
+        usuarioService.borrarUsuarioPorId(id);
+    }
+
+
+    @PutMapping("editar/{id}")
+    public ResponseEntity<UsuarioEntity> editarUsuarioPorId(@PathVariable Long id, @RequestBody
+    UsuarioEntity usuarioEditar) {
+        return ResponseEntity.ok(usuarioService.editarUsuarioPorId(id, usuarioEditar));
+    }
+
+    //Ver como agregar a la base de datos el caso de que se quiera ver las reservas para x fecha
 
 }

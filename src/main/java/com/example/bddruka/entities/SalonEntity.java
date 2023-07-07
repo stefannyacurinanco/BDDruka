@@ -21,7 +21,6 @@ public class SalonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long SalonId;
-
     private String Tipo;
     private Long Capacidad;
 
