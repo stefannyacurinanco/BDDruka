@@ -15,7 +15,6 @@ public class UsuarioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long UsuarioId;
-
     private String UsuarioName;
     private String UsuarioCorreo;
     private String UsuarioContrasena;

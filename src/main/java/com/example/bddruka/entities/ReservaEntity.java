@@ -22,7 +22,6 @@ public class ReservaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ReservaId;
-
     private Integer NumeroPersonas;
     private String Comentario;
     private String Salón;  //Hacer entidad
