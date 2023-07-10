@@ -23,6 +23,7 @@ public class SalonEntity {
     private Long SalonId;
     private String Tipo;
     private Long Capacidad;
+    private String Url; /*imagen*/
 
     @JsonIgnore
     @ManyToMany
