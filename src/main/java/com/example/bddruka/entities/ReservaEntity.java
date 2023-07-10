@@ -25,6 +25,10 @@ public class ReservaEntity {
     private Integer NumeroPersonas;
     private String Comentario;
     private String Salón;  //Hacer entidad
+    private Boolean Status = false; //indicara el estado de la reserva si estara o no disponible,
+    //nota agregar estatus//o boolean// setear como true
+
+
 
   //Preguntar el formato para fecha y hora
     @JsonFormat(pattern = "yyyy-MM-dd")

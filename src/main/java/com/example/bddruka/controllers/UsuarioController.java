@@ -56,6 +56,6 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.editarUsuarioPorId(id, usuarioEditar));
     }
 
-    //Ver como agregar a la base de datos el caso de que se quiera ver las reservas para x fecha
+    //Ver como agregar a la base de datos el caso de que se quiera ver las reservas para x fecha-para reserva controller
 
 }

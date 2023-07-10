@@ -19,7 +19,13 @@ public class UsuarioEntity {
     private String UsuarioCorreo;
     private String UsuarioContrasena;
     private Integer UsuarioTelefono;
+    private String UsuarioRol;
 
+
+
+//dejar registro simple
+    //crear tabla para rol admi relacion con usuario segun rol se diferencian funciones se limita acceso a rutas
+    //rol entity
 
 
 }
