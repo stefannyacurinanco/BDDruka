@@ -17,7 +17,6 @@ public class UsuarioEntity {
     private Long UsuarioId;
     private String UsuarioName;
     private String UsuarioCorreo;
-    private String UsuarioContrasena;
     private Integer UsuarioTelefono;
     private String UsuarioRol;
 
