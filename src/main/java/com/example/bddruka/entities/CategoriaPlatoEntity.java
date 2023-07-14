@@ -26,7 +26,7 @@ public class CategoriaPlatoEntity {
     @ManyToMany
     @JoinTable(
             name = "categorias_platos",
-            joinColumns = @JoinColumn(name = "categoriaPlato_id"),
+            joinColumns = @JoinColumn(name = "id_categoriaPlato"),
             inverseJoinColumns = @JoinColumn(name = "id_plato")
     )
     private List<PlatoEntity> platoCategoria;

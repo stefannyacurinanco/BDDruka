@@ -5,11 +5,14 @@ import com.example.bddruka.repositories.ReservaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.List;
+
 @Service
 public class ReservaServiceImpl implements ReservaService{
     @Autowired
     private ReservaRepository reservaRepository;
-//antes de guardar setear el status
+    //antes de guardar setear el status
     @Override
     public ReservaEntity crearNuevaReserva(ReservaEntity nuevaReserva) {
 
@@ -22,7 +25,20 @@ public class ReservaServiceImpl implements ReservaService{
         return null;
 
     }
-//Indicar la lista del status de la reserva implementada
+
+    @Override
+    public List<ReservaEntity> obtenerReservas() {
+        List<ReservaEntity> listaReservas = reservaRepository.findAll();
+        return listaReservas;
+    }
+
+    //Método para mostrar reservas por fecha, hacer recorrido de reservas
+    @Override
+    public List<ReservaEntity> obtenerRegistrosPorFecha(Date fecha) {
+        return ReservaRepository.findByFecha(fecha);
+    }
+
+    //Método para eliminar reservas del día anterior
 
 
 }

@@ -1,7 +1,7 @@
 package com.example.bddruka.services;
 
-import com.example.bddruka.entities.UsuarioEntity;
-import com.example.bddruka.repositories.UsuarioRepository;
+import com.example.bddruka.entities.ComensalEntity;
+import com.example.bddruka.repositories.ComensalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,45 +9,45 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UsuarioServiceImpl implements UsuarioService{
+public class ComensalServiceImpl implements ComensalService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private ComensalRepository comensalRepository;
 
     @Override
-    public List<UsuarioEntity> obtenerUsuarios() {
-        List<UsuarioEntity> listaUsuarios = usuarioRepository.findAll();
+    public List<ComensalEntity> obtenerComensales() {
+        List<ComensalEntity> listaUsuarios = comensalRepository.findAll();
         return listaUsuarios;
     }
 
     @Override
-    public Optional<UsuarioEntity> obtenerUsuarioPorId(Long id) {
-        Optional<UsuarioEntity> usuarioElegido = usuarioRepository.findById(id);
-        return usuarioElegido;
+    public Optional<ComensalEntity> obtenerComensalPorId(Long id) {
+        Optional<ComensalEntity> comensalElegido = comensalRepository.findById(id);
+        return comensalElegido;
     }
 
     @Override
-    public UsuarioEntity guardarUsuario(UsuarioEntity usuarioEntity) {
-        UsuarioEntity nuevoUsuario = usuarioRepository.save(usuarioEntity);
-        return nuevoUsuario;
+    public ComensalEntity guardarComensal(ComensalEntity comensalEntity) {
+        ComensalEntity nuevoComensal = comensalRepository.save(comensalEntity);
+        return nuevoComensal;
     }
 
     @Override
-    public void borrarUsuarioPorId(Long id) {usuarioRepository.deleteById(id);
+    public void borrarComensalPorId(Long id) {
+        comensalRepository.deleteById(id);
     }
 
     @Override
-    public UsuarioEntity editarUsuarioPorId(Long usuarioId, UsuarioEntity usuarioEditar) {
+    public ComensalEntity editarComensalPorId(Long usuarioId, ComensalEntity usuarioEditar) {
 
-        Boolean existe = usuarioRepository.existsById(usuarioId);
+        Boolean existe = comensalRepository.existsById(usuarioId);
 
         if (existe) {
-            UsuarioEntity usuarioSeleccionado = usuarioRepository.findById(usuarioId).get();
-            usuarioSeleccionado.setUsuarioName(usuarioEditar.getUsuarioName());
-            usuarioSeleccionado.setUsuarioCorreo(usuarioEditar.getUsuarioCorreo());
-            usuarioSeleccionado.setUsuarioContrasena(usuarioEditar.getUsuarioContrasena());
-            usuarioSeleccionado.setUsuarioTelefono(usuarioEditar.getUsuarioTelefono());
-            return usuarioRepository.save(usuarioSeleccionado);
+            ComensalEntity usuarioSeleccionado = comensalRepository.findById(usuarioId).get();
+            usuarioSeleccionado.setComensalName(usuarioEditar.getComensalName());
+            usuarioSeleccionado.setComensalCorreo(usuarioEditar.getComensalCorreo());
+            usuarioSeleccionado.setComensalTelefono(usuarioEditar.getComensalTelefono());
+            return comensalRepository.save(usuarioSeleccionado);
         }
         return null;
 
