@@ -25,6 +25,10 @@ public class ComensalServiceImpl implements ComensalService {
         Optional<ComensalEntity> comensalElegido = comensalRepository.findById(id);
         return comensalElegido;
     }
+    /*@Override
+    public ComensalEntity obtenerComensalPorId(Long id) {
+        return comensalRepository.findById(id).get();
+    }*/
 
     @Override
     public ComensalEntity guardarComensal(ComensalEntity comensalEntity) {

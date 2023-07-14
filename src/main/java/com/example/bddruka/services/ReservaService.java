@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ReservaService {
-    static List<ReservaEntity> obtenerRegistrosPorFeacha(java.sql.Date fecha) {
+    Optional<ReservaEntity>obtenerReservaporid(Long id);
+
+    static List<ReservaEntity> obtenerRegistrosPorFecha(java.sql.Date fecha) {
         return null;
     }
 
@@ -16,7 +18,9 @@ public interface ReservaService {
 
     List<ReservaEntity> obtenerReservas();
 
+    //Método para mostrar reservas por fecha, hacer recorrido de reservas
     List<ReservaEntity> obtenerRegistrosPorFecha(Date fecha);
+
 
     //Método para mostrar reservas por fecha, hacer recorrido de reservas
 
