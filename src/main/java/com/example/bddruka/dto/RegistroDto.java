@@ -12,6 +12,7 @@ import lombok.Setter;
 //Dto no es una entidad, no es guardado en la BDD
 //Es una representación
 //Dto significa Data Transfer Object
+
 public class RegistroDto {
     String username;
     String password;
