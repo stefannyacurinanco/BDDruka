@@ -39,7 +39,7 @@ public class ReservaEntity {
 
 
     @OneToOne
-    private UsuarioEntity usuarioEntity;
+    private ComensalEntity comensalEntity;
 
     @ManyToMany
     @JoinTable(

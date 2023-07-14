@@ -6,20 +6,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "comensal")
 @NoArgsConstructor //Constructor vacio
 @AllArgsConstructor //Constructor lleno
 @Getter //Getters
 @Setter //Setters
-public class UsuarioEntity {
+public class ComensalEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long UsuarioId;
-    private String UsuarioName;
-    private String UsuarioCorreo;
-    private String UsuarioContrasena;
-    private Integer UsuarioTelefono;
-    private String UsuarioRol;
+    private Long ComensalId;
+    private String ComensalName;
+    private String ComensalApellido;
+    private String ComensalCorreo;
+    private Integer ComensalTelefono;
 
 
 

@@ -1,6 +1,5 @@
 package com.example.bddruka.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +28,7 @@ public class PlatoEntity {
     @JoinTable(
             name = "categorias_platos",
             joinColumns = @JoinColumn(name = "id_plato"),
-            inverseJoinColumns = @JoinColumn(name = "categoriaPlato_id")
+            inverseJoinColumns = @JoinColumn(name = "id_categoriaPlato")
     )
     private List<CategoriaPlatoEntity> categoriaPlato;
 
