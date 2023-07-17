@@ -49,6 +49,11 @@ public class ReservaServiceImpl implements ReservaService{
         return ReservaRepository.findByFecha(fecha);
     }
 
+    @Override
+    public void borrarReservaPorId(Long id) {
+        reservaRepository.deleteById(id);
+    }
+
     //Método para eliminar reservas del día anterior
 
 

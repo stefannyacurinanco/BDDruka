@@ -108,6 +108,11 @@ public class ReservaController {
         //PersonajeEntity nuevoPersonaje = personajeService.save(personajeEntity);
         return ResponseEntity.ok(reservaService.crearNuevaReserva(reservaEntity));
     }
+
+    @DeleteMapping("borrar/{id}")
+    public void borrarreservaPorId(@PathVariable("id")Long id) {
+        reservaService.borrarReservaPorId(id);
+    }
 }
 
 

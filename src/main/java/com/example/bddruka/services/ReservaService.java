@@ -20,6 +20,7 @@ public interface ReservaService {
 
     //Método para mostrar reservas por fecha, hacer recorrido de reservas
     List<ReservaEntity> obtenerRegistrosPorFecha(Date fecha);
+    void borrarReservaPorId(Long id);
 
 
     //Método para mostrar reservas por fecha, hacer recorrido de reservas
