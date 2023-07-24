@@ -69,16 +69,7 @@ public class ReservaController {
         reservaService.borrarReservaPorId(id);
     }
 
-
-
-
-
+    
 }
-
-
-
-
-
-
 
 

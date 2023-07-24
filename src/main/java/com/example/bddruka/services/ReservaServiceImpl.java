@@ -54,7 +54,6 @@ public class ReservaServiceImpl implements ReservaService {
         return ReservaRepository.findByFecha(fecha);
     }
 
-
     //Método para eliminar reservas del día anterior
 
     @Override
