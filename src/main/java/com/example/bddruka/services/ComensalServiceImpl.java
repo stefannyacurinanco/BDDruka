@@ -16,8 +16,8 @@ public class ComensalServiceImpl implements ComensalService {
 
     @Override
     public List<ComensalEntity> obtenerComensales() {
-        List<ComensalEntity> listaUsuarios = comensalRepository.findAll();
-        return listaUsuarios;
+        List<ComensalEntity> listaComensales = comensalRepository.findAll();
+        return listaComensales;
     }
 
     @Override
@@ -47,11 +47,11 @@ public class ComensalServiceImpl implements ComensalService {
         Boolean existe = comensalRepository.existsById(usuarioId);
 
         if (existe) {
-            ComensalEntity usuarioSeleccionado = comensalRepository.findById(usuarioId).get();
-            usuarioSeleccionado.setComensalName(usuarioEditar.getComensalName());
-            usuarioSeleccionado.setComensalCorreo(usuarioEditar.getComensalCorreo());
-            usuarioSeleccionado.setComensalTelefono(usuarioEditar.getComensalTelefono());
-            return comensalRepository.save(usuarioSeleccionado);
+            ComensalEntity comensalSeleccionado = comensalRepository.findById(usuarioId).get();
+            comensalSeleccionado.setComensalName(usuarioEditar.getComensalName());
+            comensalSeleccionado.setComensalCorreo(usuarioEditar.getComensalCorreo());
+            comensalSeleccionado.setComensalTelefono(usuarioEditar.getComensalTelefono());
+            return comensalRepository.save(comensalSeleccionado);
         }
         return null;
 

@@ -33,8 +33,8 @@ public class PlatoEntity {
     private List<CategoriaPlatoEntity> categoriaPlato;
 
 
+}
 
-
-} //Pendiente hay que evaluar su uso y relacion
+//Pendiente hay que evaluar su uso y relacion
 //impletar url para que el cliente pueda cambiar fotos de productos y platos
 //ver si dejar para card de platos destacados

@@ -23,8 +23,8 @@ public class SecurityConfig {
         http//Especificamos las rutas a las que se puede acceder y a las que no o que se necesita un rol específico
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((requests -> requests
-                        .requestMatchers("/plato", "/api", "/salon","/producto").permitAll()
-                        .requestMatchers("/reserva/lista","/comensal", "/comensal/**","/categoriaplato","/categoriaplato/**", "/categoriaproducto","/categoriaproducto/**").hasAuthority("ADMIN")
+                        .requestMatchers("/plato", "/api", "/salon","/producto","/comensal/**","/categoriaproducto","/categoriaproducto/**").permitAll()
+                        .requestMatchers("/reserva/lista","/categoriaplato","/categoriaplato/**").hasAuthority("ADMIN")
                         .anyRequest().permitAll()))
                 .formLogin(login -> login
                         .loginPage("/login")

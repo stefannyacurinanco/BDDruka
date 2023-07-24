@@ -1,6 +1,7 @@
 package com.example.bddruka.services;
 
 import com.example.bddruka.entities.ReservaEntity;
+import com.example.bddruka.repositories.ComensalRepository;
 import com.example.bddruka.repositories.ReservaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,9 +11,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ReservaServiceImpl implements ReservaService{
+public class ReservaServiceImpl implements ReservaService {
     @Autowired
     private ReservaRepository reservaRepository;
+
+    @Autowired
+    private ComensalRepository comensalRepository;
 
     /*@Override
     public ReservaEntity findById(Long id) {
@@ -24,12 +28,13 @@ public class ReservaServiceImpl implements ReservaService{
         Optional<ReservaEntity> reservaElegida = reservaRepository.findById(id);
         return reservaElegida;
     }
+
     @Override
     public ReservaEntity crearNuevaReserva(ReservaEntity nuevaReserva) {
-
-        if (nuevaReserva.getStatus()==false) {
-            nuevaReserva.setStatus(true);
+        //buscar id comensal y setear comensal
+        if (nuevaReserva.getStatus() == false) {
             ReservaEntity reservaParaGuardar = reservaRepository.save(nuevaReserva);
+            nuevaReserva.setStatus(true);
             return reservaParaGuardar;
 
         }
@@ -49,12 +54,12 @@ public class ReservaServiceImpl implements ReservaService{
         return ReservaRepository.findByFecha(fecha);
     }
 
+    //Método para eliminar reservas del día anterior
+
     @Override
     public void borrarReservaPorId(Long id) {
         reservaRepository.deleteById(id);
     }
-
-    //Método para eliminar reservas del día anterior
 
 
 }

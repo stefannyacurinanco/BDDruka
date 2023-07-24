@@ -26,13 +26,13 @@ public class ProductoEntity {
     private String descripcion;
     private String urlImagen;//cambiar cuando de edite o se quiera ingresar algo nuevo
 
-    @ManyToMany
+    //revisar
+    @OneToMany
     @JoinTable(
             name = "categorias_productos",
             joinColumns = @JoinColumn(name = "id_producto"),
             inverseJoinColumns = @JoinColumn(name = "categoriaProducto_id")
     )
     private List<CategoriaProductoEntity> categoriaProducto;
-
 
 }
