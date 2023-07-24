@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
@@ -25,18 +26,16 @@ public class ReservaEntity {
     private Long ReservaId;
     private Integer NumeroPersonas;
     private String Comentario;
-    private String Salón;  //Hacer entidad
     private Boolean Status = false; //indicara el estado de la reserva si estara o no disponible,
     //nota agregar estatus//o boolean// setear como true
 
 
-
-  //Preguntar el formato para fecha y hora
+    //Preguntar el formato para fecha y hora
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date Fecha;
 
     @JsonFormat(pattern = "HH:mm")
-    private Time Hora;
+    private LocalTime Hora;
 
     /*@JsonManagedReference//Indicamos que es la dueña de la relación
     @OneToOne(mappedBy = "comensalConsulta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -45,7 +44,7 @@ public class ReservaEntity {
     /*@OneToOne
     private ComensalEntity comensalEntity;*/
 
-    @OneToOne(mappedBy = "reserva", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne
     private ComensalEntity comensalEntity;
 
     @ManyToMany
@@ -56,16 +55,9 @@ public class ReservaEntity {
     )
     private List<SalonEntity> salonesReserva;
 
-   //definimos funciones aqui en vez de en impl y service, bc nada funcionada.Prueba1
-    public ComensalEntity getComensal() {
-        return comensalEntity;
-    }
-    public void setComensal(ComensalEntity comensal) {
-        this.comensalEntity = comensal;
-    }
-
-
-
 }
+
+
+
 
 

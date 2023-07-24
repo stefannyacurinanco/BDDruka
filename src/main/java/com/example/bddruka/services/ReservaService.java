@@ -2,6 +2,7 @@ package com.example.bddruka.services;
 
 import com.example.bddruka.entities.ComensalEntity;
 import com.example.bddruka.entities.ReservaEntity;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.Date;
 import java.util.List;
@@ -14,15 +15,17 @@ public interface ReservaService {
         return null;
     }
 
-    ReservaEntity crearNuevaReserva(ReservaEntity nuevaReserva);
+    public ReservaEntity crearNuevaReserva(ReservaEntity nuevaReserva);
 
     List<ReservaEntity> obtenerReservas();
 
     //Método para mostrar reservas por fecha, hacer recorrido de reservas
-    List<ReservaEntity> obtenerRegistrosPorFecha(Date fecha);
-
+    //static List<ReservaEntity> obtenerRegistrosPorFecha(Date fecha);
 
     //Método para mostrar reservas por fecha, hacer recorrido de reservas
+    List<ReservaEntity> obtenerRegistrosPorFecha(Date fecha);
+
+    void borrarReservaPorId(Long id);
 
 }
 //
